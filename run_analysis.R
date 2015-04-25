@@ -2,29 +2,29 @@ library(dplyr)
 
 # Work on test data first
 # Read test vector data
-xTest <- read.table("./Project 1/UCI HAR Dataset/test/X_test.txt",header=FALSE)
+xTest <- read.table("./UCI HAR Dataset/test/X_test.txt",header=FALSE)
 # Read subject data
-subTest <- read.table("./Project 1/UCI HAR Dataset/test/subject_test.txt",header=FALSE)
+subTest <- read.table("./UCI HAR Dataset/test/subject_test.txt",header=FALSE)
 # Read activity data
-yTest <- read.table("./Project 1/UCI HAR Dataset/test/y_test.txt",header=FALSE)
+yTest <- read.table("./UCI HAR Dataset/test/y_test.txt",header=FALSE)
 # Bind subject and activity numbers to each vector
 testDf <- cbind (subTest, yTest, xTest)
 
 # Now do the same steps for training data
 # Read vector data
-xTrain <- read.table("./Project 1/UCI HAR Dataset/train/X_train.txt",header=FALSE)
+xTrain <- read.table("./UCI HAR Dataset/train/X_train.txt",header=FALSE)
 # Read subject data
-subTrain <- read.table("./Project 1/UCI HAR Dataset/train/subject_train.txt",header=FALSE)
+subTrain <- read.table("./UCI HAR Dataset/train/subject_train.txt",header=FALSE)
 # Read activity data
-yTrain <- read.table("./Project 1/UCI HAR Dataset/train/y_train.txt",header=FALSE)
+yTrain <- read.table("./UCI HAR Dataset/train/y_train.txt",header=FALSE)
 # Bind subject and activity numbers to each vector
 trainDf <- cbind (subTrain, yTrain, xTrain)
 
 # Read activity labels
-actLabels <- read.table("./Project 1/UCI HAR Dataset/activity_labels.txt",header=FALSE)
+actLabels <- read.table("./UCI HAR Dataset/activity_labels.txt",header=FALSE)
 names(actLabels) = c("actCodeNum","actName")
 # Also read vector var names
-MeasureLbls <- read.table("./Project 1/UCI HAR Dataset/features.txt",header=FALSE, stringsAsFactors=FALSE)
+MeasureLbls <- read.table("./UCI HAR Dataset/features.txt",header=FALSE, stringsAsFactors=FALSE)
 
 # Combine the rows of test and train dfs
 testTrainDf <- rbind(testDf, trainDf)
